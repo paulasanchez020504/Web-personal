@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en"><head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260929-05-baae6c9","C":{"Abril Fatface":"YACgEZbkUVE,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo":"YACgEZulLoA,0","Arial Narrow":"YAGyDvJ_4Ts,0","Arial Rounded MT Bold":"YAFcfoaHu-s,0","Arial":"YAGyDvJ_4Ts,0","Avenir Next":"YAFcfmNq6UY,0","Baloo 2":"YADK30bC6HQ,0","Bebas Neue":"YACgESME5ew,0","Bricolage Grotesque":"YAFyMcdwzpc,0","Broken Glyph":"YADZ-exUkv0,0","Canva Sans":"YAFdJjTk5UU,1","Caveat":"YALBs2ploWQ,0","Comic Sans MS":"YAFcfvtOAUY,1","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","Courier Prime":"YAD1aFjegN8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAFdJpU7Kkk,0","Georgia":"YAGzXkO0pEM,0","Ghost Mono":"YAHQutsX00Q,0","Hanken Grotesk":"YAFcfhwp99E,0","Helvetica Neue":"YAFcf6CtJfI,0","Helvetica":"YAFcf6CtJfI,0","IBM Plex Mono":"YAFdJkmvhGI,0","Impact":"YAFcfnjI7Vk,0","Instrument Serif":"YAHFeOnZNEk,0","Inter":"YAFdJvSyp_k,3","Iowan Old Style":"YAGNIFa8j9o,0","Jacques Francois":"YADK3zbC6RM,0","JetBrains Mono":"YAFdJksXcAk,0","Josefin Sans":"YAFdJjvw9Ps,0","Lato":"YAFdJuFCnaw,0","Libre Baskerville":"YACgEUFdPdA,0","Lobster":"YAD8SnSjSFI,0","Lora":"YACgEXvxf8Q,0","Merriweather":"YACgEXvHxxs,0","Montserrat":"YAFdtQi73Xs,0","Nunito":"YAFdJoNRMmU,1","Oleo Script":"YACgEQQ14jI,0","Oswald":"YACgEQY10lw,0","Pacifico":"YADLjORQ1u4,0","Phantom Sans":"YAFdJvgJ5TU,0","Playfair Display":"YAFdJhem5V8,1","Plus Jakarta Sans":"YAGvf3_u0_Q,0","Poppins":"YAFdJjbTu24,1","Press Start 2P":"YAFyGr-8pmQ,0","Quicksand":"YAFdJpYtCxE,1","Raleway":"YAFdJhmxbVQ,1","Roboto Slab":"YAFdJswIKAg,0","Rockwell":"YAFcfyVZnN0,0","Rye":"YACgEdQP21k,0","Segoe UI":"YAHNdRD1Klw,0","Source Sans 3":"YAG4lO1Mj10,0","Source Serif 4":"YACgEfdj394,0","Space Grotesk":"YADZ-dYEmhg,0","Space Mono":"YADW1-vpsoc,0","Times New Roman":"YAGzXW3gftg,0","Times":"YAGzXW3gftg,0","Trebuchet MS":"YAFcfrglpVA,0","UV Display":"YAEdVfSSpYo,0","UV Sans":"YAFdJvgJ5TU,0","Ubuntu":"YACgERDU--Q,0","Verdana":"YAGzXTctYtQ,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0","ui-monospace":"YAD1aFjegN8,0","ui-sans-serif":"YACkoD1yZN0,0"}}');</script><script src="/_sdk/6542d56fbfe7a3eb.telemetry_sdk.js" integrity="sha512-ECdM0nK7EkwDuOqho2qxgyRQXyBHk9hZqRKMBr+Xsu6zjeHlt+qkO2N2YRiHN7Kg4e1fEHDhjIp4bGJYVypv1g=="></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Marketing Resume</title>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;family=Outfit:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+  <style>
+        :root {
+            --yellow: #a7b4d6;
+            --black: #0A0A0A;
+            --off-white: #FDFEFF;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .font-mono {
+            font-family: 'Space Mono', monospace;
+        }
+
+        .skill-badge {
+        }
+
+        .timeline-dot {
+        }
+
+        .exp-card {
+            cursor: pointer;
+        }
+
+        .exp-detail {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, padding 0.4s ease;
+            opacity: 0;
+        }
+        .exp-detail.open {
+            max-height: 400px;
+            opacity: 1;
+        }
+
+        .chevron-icon {
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .chevron-icon.rotated {
+            transform: rotate(180deg);
+        }
+
+        .edu-card {
+        }
+
+        .geo-stripe {
+            background: repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 4px,
+                rgba(0,0,0,0.06) 4px,
+                rgba(0,0,0,0.06) 8px
+            );
+        }
+
+        .geo-dots {
+            background-image: radial-gradient(circle, rgba(0,0,0,0.08) 1.5px, transparent 1.5px);
+            background-size: 20px 20px;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-in {
+            animation: slideUp 0.6s ease forwards;
+        }
+        .animate-in-delay-1 { animation-delay: 0.1s; opacity: 0; }
+        .animate-in-delay-2 { animation-delay: 0.2s; opacity: 0; }
+        .animate-in-delay-3 { animation-delay: 0.3s; opacity: 0; }
+        .animate-in-delay-4 { animation-delay: 0.4s; opacity: 0; }
+
+        .profile-ring {
+            border: 4px solid var(--black);
+        }
+
+        .section-bar {
+            width: 60px;
+            height: 6px;
+            background: var(--yellow);
+        }
+
+        @media (max-width: 768px) {
+            .timeline-line {
+                left: 20px !important;
+            }
+            [style*="margin-bottom: -60px"] {
+                margin-bottom: -30px !important;
+            }
+        }
+    </style>
+  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js" type="text/javascript"></script>
+  <script src="/_sdk/6c2ecc939521f244.data_sdk.js" type="text/javascript" integrity="sha512-gRx8s+XsZDN6mSIQu2sivLZysbV0WHhb5kXNUWlgVb5lCMU1foJYukyMEDPv8Tnoocb8iwqB4XdRrWc7oEGzIQ=="></script>
+  <script src="/_sdk/6bf4579cc4c25151.editing_sdk.js" type="text/javascript" integrity="sha512-12l4JxmokLfWaGAHNO68l5Ev8ahSshUKfuxnYUB8nkqSU1+WiCvimsPjHzPjw1k7DcHL+eZ+K9Bld04jnd5gkg=="></script>
+  <script src="/_sdk/ddcab3e45959c817.resizing_sdk.js" type="text/javascript" integrity="sha512-VAviUKfZVzugWBSeULYjSljTX+nb84wc6Zzbx5GQaQgh6X2ISSjXi8eIiCDGdwDh10esJMY0+QFQgUy9NcrTlQ=="></script>
+ </head>
+ <body data-template-id="__page-root" class="w-full min-h-screen" style="background: rgb(245, 238, 220);"><!-- HEADER HERO -->
+  <header data-template-id="header-section" class="canva-header w-full relative overflow-visible pb-0" style="background: rgb(167, 180, 214);">
+   <div class="max-w-6xl mx-auto px-6 py-24 md:py-32 relative z-10 pb-0">
+    <div class="grid md:grid-cols-2 gap-x-[6rem] items-stretch"><!-- Name & Info - Left Column -->
+     <div class="flex flex-col justify-end">
+      <h1 class="canva-text text-6xl md:text-8xl lg:text-9xl tracking-tight animate-in animate-in-delay-1" style="line-height: 0.85;">
+       <div data-template-id="header-first-name" class="canva-text text-6xl md:text-8xl lg:text-9xl tracking-tight" style="line-height: 0.85; color: rgb(10, 10, 10); font-weight: 700; font-style: normal; font-size: 153px;">Paula</div>
+       <div data-template-id="header-last-name" class="canva-text text-6xl md:text-8xl lg:text-9xl tracking-tight" style="line-height: 0.85; margin-top: -0.35em; color: rgb(10, 10, 10); font-weight: 700; font-style: normal; font-size: 153px;">Sánchez</div></h1>
+      <p data-template-id="header-label" class="canva-text font-mono text-xs tracking-[0.3em] uppercase mt-3 animate-in animate-in-delay-2" style="color: rgb(10, 10, 10); font-weight: 400; font-style: normal; font-size: 28px;">Marketing e Investigación de Mercados</p>
+     </div><!-- Profile Photo - Right Column -->
+     <div class="self-stretch animate-in"><img data-template-id="profile-photo" class="canva-image w-full aspect-square object-cover" loading="lazy" src="canva://MAHWkPnVy58/1" alt="72CF9B75-25F9-4D0B-B94B-E7D5547ACC2B_1_105_c.jpg">
+     </div>
+    </div>
+   </div>
+  </header>
+  <main class="w-full"><!-- ABOUT & EXPERTISE -->
+   <section data-template-id="about-expertise-section" class="canva-section w-full relative" style="background: rgb(253, 254, 255);">
+    <div class="max-w-6xl mx-auto px-6 py-24 md:py-32 relative z-10" style="padding-bottom: calc(6rem * 1); padding-top: calc(6rem * 1);">
+     <div class="grid md:grid-cols-2 gap-x-[6rem]"><!-- Left Column: About -->
+      <div>
+       <div class="mb-8">
+        <h2 data-template-id="summary-heading" class="canva-text text-4xl md:text-5xl tracking-wide" style="color: rgb(10, 10, 10); font-weight: 700; font-style: normal; font-size: 56px;">SOBRE MI</h2>
+       </div>
+       <div>
+        <p data-template-id="summary-text" class="canva-text text-lg md:text-xl leading-relaxed" style="color: rgb(10, 10, 10); font-weight: 400; font-style: normal; font-size: 19px; letter-spacing: 0rem;">Results-driven marketing executive with 12+ years of experience building and scaling brands. Specializes in digital transformation, growth strategy, and creative direction for startups and companies. Proven track record of driving revenue growth through data-informed campaigns, brand repositioning, and high-impact storytelling.</p>
+       </div><!-- Contact Details Vertical Stack -->
+       <div class="flex flex-col gap-3 mt-16">
+        <div class="flex items-center gap-2"><i data-lucide="mail" style="width:20px;height:20px;"></i> <span data-template-id="contact-email" class="canva-text text-base" style="color: rgb(10, 10, 10); font-weight: 400; font-style: normal; font-size: 16px;">paula.sanchez020504@gmail.com</span>
+        </div>
+        <div class="flex items-center gap-2"><i data-lucide="phone" style="width:20px;height:20px;"></i> <span data-template-id="contact-phone" class="canva-text text-base" style="color: rgb(10, 10, 10); font-weight: 400; font-style: normal; font-size: 16px;">+34 601358871</span>
+        </div>
+        <div class="flex items-center gap-2"><i data-lucide="map-pin" style="width:20px;height:20px;"></i> <span data-template-id="contact-location" class="canva-text text-base" style="color: rgb(10, 10, 10); font-weight: 400; font-style: normal; font-size: 16px;">Granada</span>
+        </div>
+       </div>
+      </div><!-- Right Column: Expertise -->
+      <div>
+       <div class="mb-10">
+        <h2 data-template-id="skills-heading" class="canva-text text-4xl md:text-5xl tracking-wide" style="color: rgb(10, 10, 10); font-weight: 700; font-style: normal; font-size: 56px;">SKILLS</h2>
+       </div>
+       <div class="grid grid-cols-2 gap-4">
+        <div data-template-id="skill-1" class="canva-tag skill-badge px-5 py-4 text-center font-bold text-sm md:text-base" style="background: rgb(167, 180, 214); color: rgb(10, 10, 10); font-weight: 700; font-style: normal; font-size: 18px;">Brand Strategy</div>
+        <div data-template-id="skill-2" class="canva-tag skill-badge px-5 py-4 text-center font-bold text-sm md:text-base" style="background: rgb(10, 10, 10); color: rgb(167, 180, 214); font-weight: 700; font-style: normal; font-size: 18px;">Growth Marketing</div>
+        <div data-template-id="skill-3" class="canva-tag skill-badge px-5 py-4 text-center font-bold text-sm md:text-base" style="background: rgb(10, 10, 10); color: rgb(167, 180, 214); font-weight: 700; font-style: normal; font-size: 18px;">Performance Media</div>
+        <div data-template-id="skill-4" class="canva-tag skill-badge px-5 py-4 text-center font-bold text-sm md:text-base" style="background: rgb(167, 180, 214); color: rgb(10, 10, 10); font-weight: 700; font-style: normal; font-size: 18px;">Content Strategy</div>
+        <div data-template-id="skill-5" class="canva-tag skill-badge px-5 py-4 text-center font-bold text-sm md:text-base" style="background: rgb(167, 180, 214); color: rgb(10, 10, 10); font-weight: 700; font-style: normal; font-size: 18px;">SEO &amp; Analytics</div>
+        <div data-template-id="skill-6" class="canva-tag skill-badge px-5 py-4 text-center font-bold text-sm md:text-base" style="background: rgb(10, 10, 10); color: rgb(167, 180, 214); font-weight: 700; font-style: normal; font-size: 18px;">Product Marketing</div>
+        <div data-template-id="skill-7" class="canva-tag skill-badge px-5 py-4 text-center font-bold text-sm md:text-base" style="background: rgb(10, 10, 10); color: rgb(167, 180, 214); font-weight: 700; font-style: normal; font-size: 18px;">Creative Direction</div>
+        <div data-template-id="skill-8" class="canva-tag skill-badge px-5 py-4 text-center font-bold text-sm md:text-base" style="background: rgb(167, 180, 214); color: rgb(10, 10, 10); font-weight: 700; font-style: normal; font-size: 18px;">Team Leadership</div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- EXPERIENCE TIMELINE -->
+   <section data-template-id="experience-section" class="canva-section w-full relative" style="background: rgb(10, 10, 10);">
+    <div class="geo-dots absolute inset-0 pointer-events-none opacity-20"></div>
+    <div class="max-w-6xl mx-auto px-6 py-16 md:py-20 relative z-10">
+     <div class="mb-12">
+      <h2 data-template-id="experience-heading" class="canva-text text-4xl md:text-5xl tracking-wide" style="color: rgb(167, 180, 214); font-weight: 700; font-style: normal; font-size: 56px;">EXPERIENCE</h2>
+     </div>
+     <div class="relative"><!-- Timeline Line -->
+      <div class="timeline-line absolute top-0 bottom-0 left-6 md:left-8 w-[3px]" style="left:30px;background:#a7b4d6;"></div><!-- Exp 1 -->
+      <div class="relative pl-16 md:pl-20 mb-8">
+       <div class="timeline-dot absolute left-[22px] md:left-[22px] top-6 w-[20px] h-[20px] z-10 rounded-full" style="left:22px;background:#a7b4d6;"></div>
+       <div data-template-id="exp-1" class="canva-card exp-card p-6" onclick="toggleExp(1)" style="background: rgb(26, 26, 26);">
+        <div class="flex items-start justify-between">
+         <div>
+          <h3 data-template-id="exp-1-title" class="canva-text text-2xl md:text-3xl tracking-wide" style="color: rgb(167, 180, 214); font-weight: 700; font-style: normal; font-size: 29px;">VP OF MARKETING</h3>
+          <p data-template-id="exp-1-company" class="canva-text font-mono text-sm mt-1" style="color: rgb(253, 254, 255); font-weight: 400; font-style: normal; font-size: 16px;">Streamline Systems</p>
+          <p data-template-id="exp-1-date" class="canva-text font-mono text-xs mt-2" style="color: rgb(163, 163, 163); font-weight: 400; font-style: normal; font-size: 14px;">2021 — Present</p>
+         </div><i data-lucide="chevron-down" class="chevron-icon flex-shrink-0" id="chevron-1" style="width:24px;height:24px;color:#a7b4d6;"></i>
+        </div>
+       </div>
+       <div class="exp-detail ml-0" id="detail-1">
+        <div data-template-id="exp-detail-1" class="canva-panel p-5 mt-1" style="background: rgb(42, 42, 42);">
+         <p data-template-id="exp-detail-1-text" class="canva-text text-sm leading-relaxed" style="color: rgb(212, 212, 212); font-weight: 400; font-style: normal; font-size: 16px;">Spearheaded a 28-person marketing organization across brand, growth, and product marketing. Directed a full rebrand that increased brand awareness by 180%. Built a demand generation engine driving $42M in annual pipeline. Launched an industry-leading podcast reaching 50K weekly listeners.</p>
+        </div>
+       </div>
+      </div><!-- Exp 2 -->
+      <div class="relative pl-16 md:pl-20 mb-8">
+       <div class="timeline-dot absolute left-[22px] top-6 w-[20px] h-[20px] z-10 rounded-full" style="left:22px;background:#a7b4d6;"></div>
+       <div data-template-id="exp-2" class="canva-card exp-card p-6" onclick="toggleExp(2)" style="background: rgb(26, 26, 26);">
+        <div class="flex items-start justify-between">
+         <div>
+          <h3 data-template-id="exp-2-title" class="canva-text text-2xl md:text-3xl tracking-wide" style="color: rgb(167, 180, 214); font-weight: 700; font-style: normal; font-size: 29px;">DIRECTOR OF GROWTH</h3>
+          <p data-template-id="exp-2-company" class="canva-text font-mono text-sm mt-1" style="color: rgb(253, 254, 255); font-weight: 400; font-style: normal; font-size: 16px;">Open Horizon</p>
+          <p data-template-id="exp-2-date" class="canva-text font-mono text-xs mt-2" style="color: rgb(163, 163, 163); font-weight: 400; font-style: normal; font-size: 14px;">2018 — 2021</p>
+         </div><i data-lucide="chevron-down" class="chevron-icon flex-shrink-0" id="chevron-2" style="width:24px;height:24px;color:#a7b4d6;"></i>
+        </div>
+       </div>
+       <div class="exp-detail ml-0" id="detail-2">
+        <div data-template-id="exp-detail-2" class="canva-panel p-5 mt-1" style="background: rgb(42, 42, 42);">
+         <p data-template-id="exp-detail-2-text" class="canva-text text-sm leading-relaxed" style="color: rgb(212, 212, 212); font-weight: 400; font-style: normal; font-size: 16px;">Scaled paid acquisition from $200K to $2.4M in monthly spend. Led a content-driven SEO strategy that increased organic traffic by 320% year-over-year. Partnered cross-functionally with product, design, and engineering to accelerate growth initiatives.</p>
+        </div>
+       </div>
+      </div><!-- Exp 3 -->
+      <div class="relative pl-16 md:pl-20 mb-8">
+       <div class="timeline-dot absolute left-[22px] top-6 w-[20px] h-[20px] z-10 rounded-full" style="left:22px;background:#a7b4d6;"></div>
+       <div data-template-id="exp-3" class="canva-card exp-card p-6" onclick="toggleExp(3)" style="background: rgb(26, 26, 26);">
+        <div class="flex items-start justify-between">
+         <div>
+          <h3 data-template-id="exp-3-title" class="canva-text text-2xl md:text-3xl tracking-wide" style="color: rgb(167, 180, 214); font-weight: 700; font-style: normal; font-size: 29px;">SENIOR MARKETING MANAGER</h3>
+          <p data-template-id="exp-3-company" class="canva-text font-mono text-sm mt-1" style="color: rgb(253, 254, 255); font-weight: 400; font-style: normal; font-size: 16px;">Creative Studio + Lab</p>
+          <p data-template-id="exp-3-date" class="canva-text font-mono text-xs mt-2" style="color: rgb(163, 163, 163); font-weight: 400; font-style: normal; font-size: 14px;">2015 — 2018</p>
+         </div><i data-lucide="chevron-down" class="chevron-icon flex-shrink-0" id="chevron-3" style="width:24px;height:24px;color:#a7b4d6;"></i>
+        </div>
+       </div>
+       <div class="exp-detail ml-0" id="detail-3">
+        <div data-template-id="exp-detail-3" class="canva-panel p-5 mt-1" style="background: rgb(42, 42, 42);">
+         <p data-template-id="exp-detail-3-text" class="canva-text text-sm leading-relaxed" style="color: rgb(212, 212, 212); font-weight: 400; font-style: normal; font-size: 16px;">Led integrated campaigns for 15+ enterprise clients, including two well-known global brands. Introduced a data-driven creative testing framework that improved campaign ROI by 65%. Contributed to three award–winning campaigns.</p>
+        </div>
+       </div>
+      </div><!-- Exp 4 -->
+      <div class="relative pl-16 md:pl-20 mb-8">
+       <div class="timeline-dot absolute left-[22px] top-6 w-[20px] h-[20px] z-10 rounded-full" style="left:22px;background:#a7b4d6;"></div>
+       <div data-template-id="exp-4" class="canva-card exp-card p-6" onclick="toggleExp(4)" style="background: rgb(26, 26, 26);">
+        <div class="flex items-start justify-between">
+         <div>
+          <h3 data-template-id="exp-4-title" class="canva-text text-2xl md:text-3xl tracking-wide" style="color: rgb(167, 180, 214); font-weight: 700; font-style: normal; font-size: 29px;">MARKETING COORDINATOR</h3>
+          <p data-template-id="exp-4-company" class="canva-text font-mono text-sm mt-1" style="color: rgb(253, 254, 255); font-weight: 400; font-style: normal; font-size: 16px;">Premium Media Group</p>
+          <p data-template-id="exp-4-date" class="canva-text font-mono text-xs mt-2" style="color: rgb(163, 163, 163); font-weight: 400; font-style: normal; font-size: 14px;">2013 — 2015</p>
+         </div><i data-lucide="chevron-down" class="chevron-icon flex-shrink-0" id="chevron-4" style="width:24px;height:24px;color:#a7b4d6;"></i>
+        </div>
+       </div>
+       <div class="exp-detail ml-0" id="detail-4">
+        <div data-template-id="exp-detail-4" class="canva-panel p-5 mt-1" style="background: rgb(42, 42, 42);">
+         <p data-template-id="exp-detail-4-text" class="canva-text text-sm leading-relaxed" style="color: rgb(212, 212, 212); font-weight: 400; font-style: normal; font-size: 16px;">Managed social media strategy across five platforms, growing audience from 12K to 180K. Coordinated marketing for a flagship conference with 2,000+ attendees. Built and launched the company’s first email nurture program, achieving a 38% open rate.</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- EDUCATION & AWARDS -->
+   <section data-template-id="education-awards-section" class="canva-section w-full" style="background: rgb(253, 254, 255);">
+    <div class="max-w-6xl mx-auto px-6 py-16 md:py-20">
+     <div class="mb-12">
+      <h2 data-template-id="education-awards-heading" class="canva-text text-4xl md:text-5xl tracking-wide" style="color: rgb(10, 10, 10); font-weight: 700; font-style: normal; font-size: 56px;">EDUCATION &amp; AWARDS</h2>
+     </div>
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Left Column: Education -->
+      <div>
+       <h3 data-template-id="education-heading" class="canva-text text-xl md:text-2xl tracking-wide mb-6 font-bold" style="color: rgb(10, 10, 10); font-weight: 700; font-style: normal; font-size: 21px;">EDUCATION</h3><!-- Education Card 1 -->
+       <div data-template-id="edu-1" class="canva-card edu-card p-8 relative overflow-hidden min-h-[180px] flex flex-col mb-6" style="background: rgb(167, 180, 214);">
+        <div class="flex items-start gap-4 flex-1">
+         <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-none"><i data-lucide="graduation-cap" style="width:26px;height:26px;"></i>
+         </div>
+         <div class="flex-1">
+          <h4 data-template-id="edu-1-degree" class="canva-text font-bold text-lg" style="color: rgb(10, 10, 10); font-weight: 700; font-style: normal; font-size: 21px;">MBA, Marketing &amp; Strategy</h4>
+          <p data-template-id="edu-1-school" class="canva-text font-mono text-sm mt-1" style="color: rgb(10, 10, 10); font-weight: 400; font-style: normal; font-size: 16px;">School of Business, West University</p>
+          <p data-template-id="edu-1-year" class="canva-text font-mono text-xs mt-2 opacity-70" style="color: rgb(10, 10, 10); font-weight: 400; font-style: normal; font-size: 14px;">2013</p>
+          <p data-template-id="edu-1-desc" class="canva-text text-sm mt-3 leading-relaxed" style="color: rgb(10, 10, 10); font-weight: 400; font-style: normal; font-size: 14px;">Focused on brand management and consumer insights. Wrote a thesis on digital transformation in retail.</p>
+         </div>
+        </div>
+       </div><!-- Education Card 2 -->
+       <div data-template-id="edu-2" class="canva-card edu-card p-8 relative overflow-hidden min-h-[180px] flex flex-col" style="background: rgb(167, 180, 214);">
+        <div class="flex items-start gap-4 flex-1">
+         <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-none"><i data-lucide="graduation-cap" style="width:26px;height:26px;"></i>
+         </div>
+         <div class="flex-1">
+          <h4 data-template-id="edu-2-degree" class="canva-text font-bold text-lg" style="color: rgb(10, 10, 10); font-weight: 700; font-style: normal; font-size: 21px;">BA in Communications &amp; Media Studies</h4>
+          <p data-template-id="edu-2-school" class="canva-text font-mono text-sm mt-1" style="color: rgb(10, 10, 10); font-weight: 400; font-style: normal; font-size: 16px;">Southwest University</p>
+          <p data-template-id="edu-2-year" class="canva-text font-mono text-xs mt-2 opacity-70" style="color: rgb(10, 10, 10); font-weight: 400; font-style: normal; font-size: 14px;">2011</p>
+          <p data-template-id="edu-2-desc" class="canva-text text-sm mt-3 leading-relaxed" style="color: rgb(10, 10, 10); font-weight: 400; font-style: normal; font-size: 14px;">Emphasis on digital media and journalism. Dean’s Scholarship recipient; active contributor to student publications.</p>
+         </div>
+        </div>
+       </div>
+      </div><!-- Right Column: Awards -->
+      <div>
+       <h3 data-template-id="awards-heading" class="canva-text text-xl md:text-2xl tracking-wide mb-6 font-bold" style="color: rgb(10, 10, 10); font-weight: 700; font-style: normal; font-size: 21px;">AWARDS</h3><!-- Awards Card 1 -->
+       <div data-template-id="award-1" class="canva-card edu-card p-8 relative overflow-hidden min-h-[180px] flex flex-col mb-6" style="background: rgb(167, 180, 214);">
+        <div class="flex items-start gap-4 flex-1">
+         <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-none"><i data-lucide="trophy" style="width:26px;height:26px;"></i>
+         </div>
+         <div class="flex-1">
+          <h4 data-template-id="award-1-name" class="canva-text font-bold text-lg" style="color: rgb(10, 10, 10); font-weight: 700; font-style: normal; font-size: 21px;">Award for Best Digital Campaign</h4>
+          <p data-template-id="award-1-org" class="canva-text font-mono text-sm mt-1" style="color: rgb(10, 10, 10); font-weight: 400; font-style: normal; font-size: 16px;">Northeast Academy of Digital Arts</p>
+          <p data-template-id="award-1-year" class="canva-text font-mono text-xs mt-2 opacity-70" style="color: rgb(10, 10, 10); font-weight: 400; font-style: normal; font-size: 14px;">2022</p>
+          <p data-template-id="award-1-desc" class="canva-text text-sm mt-3 leading-relaxed" style="color: rgb(10, 10, 10); font-weight: 400; font-style: normal; font-size: 14px;">Recognized for the Streamline Systems rebrand, which drove a 180% increase in brand awareness.</p>
+         </div>
+        </div>
+       </div><!-- Awards Card 2 -->
+       <div data-template-id="award-2" class="canva-card edu-card p-8 relative overflow-hidden min-h-[180px] flex flex-col" style="background: rgb(167, 180, 214);">
+        <div class="flex items-start gap-4 flex-1">
+         <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-none"><i data-lucide="trophy" style="width:26px;height:26px;"></i>
+         </div>
+         <div class="flex-1">
+          <h4 data-template-id="award-2-name" class="canva-text font-bold text-lg" style="color: rgb(10, 10, 10); font-weight: 700; font-style: normal; font-size: 21px;">Top Emerging Leaders in Marketing</h4>
+          <p data-template-id="award-2-org" class="canva-text font-mono text-sm mt-1" style="color: rgb(10, 10, 10); font-weight: 400; font-style: normal; font-size: 16px;">Public Press</p>
+          <p data-template-id="award-2-year" class="canva-text font-mono text-xs mt-2 opacity-70" style="color: rgb(10, 10, 10); font-weight: 400; font-style: normal; font-size: 14px;">2021</p>
+          <p data-template-id="award-2-desc" class="canva-text text-sm mt-3 leading-relaxed" style="color: rgb(10, 10, 10); font-weight: 400; font-style: normal; font-size: 14px;">Selected for leadership and impact in advancing innovative, growth-driven marketing strategies.</p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+  </main><!-- FOOTER -->
+  <footer data-template-id="footer-section" class="canva-footer w-full" style="background: rgb(10, 10, 10);">
+   <div class="max-w-6xl mx-auto px-6 py-8 text-center">
+    <p data-template-id="footer-text" class="canva-text font-mono text-xs tracking-widest uppercase" style="color: rgb(253, 254, 255); font-weight: 400; font-style: normal; font-size: 13px;">© 2030 zola bekker — Built with Passion</p>
+   </div>
+  </footer>
+  <script>
+        lucide.createIcons();
+
+        let activeExp = null;
+
+        function toggleExp(index) {
+            const detail = document.getElementById('detail-' + index);
+            const chevron = document.getElementById('chevron-' + index);
+            const card = document.querySelector('[data-template-id="exp-' + index + '"]');
+
+            // If clicking the currently active one, close it
+            if (activeExp === index) {
+                detail.classList.remove('open');
+                chevron.classList.remove('rotated');
+                card.classList.remove('active');
+                activeExp = null;
+                return;
+            }
+
+            // Close previously active
+            if (activeExp !== null) {
+                const prevDetail = document.getElementById('detail-' + activeExp);
+                const prevChevron = document.getElementById('chevron-' + activeExp);
+                const prevCard = document.querySelector('[data-template-id="exp-' + activeExp + '"]');
+                if (prevDetail) prevDetail.classList.remove('open');
+                if (prevChevron) prevChevron.classList.remove('rotated');
+                if (prevCard) prevCard.classList.remove('active');
+            }
+
+            // Open new
+            detail.classList.add('open');
+            chevron.classList.add('rotated');
+            card.classList.add('active');
+            activeExp = index;
+        }
+    </script>
+ 
+</body></html>
